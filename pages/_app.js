@@ -39,6 +39,12 @@ function MyApp({ Component, pageProps }) {
       <Link href="/profile">
         <a className="m-6">Profile</a>
       </Link>
+      <Link href="/real-estate">
+        <a className="m-6">Real Estate</a>
+      </Link>
+      <Link href="/business">
+        <a className="m-6">Business</a>
+      </Link>
     </nav>
     <div className="py-8 px-16">
       <Component {...pageProps} />

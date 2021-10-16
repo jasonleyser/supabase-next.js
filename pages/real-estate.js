@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { supabase } from '../api'
 
-export default function Home() {
+export default function RealEstate() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Home() {
   }, [])
   async function fetchPosts() {
     const { data, error } = await supabase
-      .from('posts')
+      .from('properties')
       .select()
     setPosts(data)
     setLoading(false)
@@ -30,18 +30,18 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Supablog</title>
+        <title>Melotown Real Estate</title>
       </Head>
 
-      <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">Posts</h1>
+      <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">Melotown Real Estate Listings</h1>
       {
         posts.map(post => (
           <Link key={post.id} href={`/posts/${post.id}`}>
             <a className="block border-b border-gray-300	mt-8 pb-4">
-              <h2 className="text-xl font-semibold">{post.title}</h2>
-              <p className="text-gray-500 mt-2">Submitted by: {post.user_email}</p>
-              <iframe width="560" height="315" src={post.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p>{post.url}</p>
+              <img src="https://miro.medium.com/max/735/0*PgMATgPyXdnUKn-2." width="300px" />
+              <b>{post.name}</b>
+              <p>{post.address}</p>
+              <p>Rent: Σ{post.rent_price} &nbsp; Own: Σ{post.buy_price}</p>
             </a>
           </Link>)
         )
