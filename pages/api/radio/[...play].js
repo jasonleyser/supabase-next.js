@@ -13,6 +13,7 @@ async function submitData(props) {
 			artist: props.artist, 
 			year: props.year, 
 			underground_lvl: props.underground_lvl,
+			radio_id: props.radio_id, 
 			discogs_id: props.discogs_id, 
 			discogs_url: props.discogs_url 
 		},
@@ -28,9 +29,10 @@ export default (req, res) => {
 		title: play[0], 
 		artist: play[1], 
 		year: play[2], 
-		underground_lvl: play[3], 
-		discogs_id: play[4], 
-		discogs_url: play[5] 
+		underground_lvl: play[3],
+		radio_id: play[4], 
+		discogs_id: play[5], 
+		discogs_url: play[6] 
 	});
 
 	res.end(`Post: ${play}`)
