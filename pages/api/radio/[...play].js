@@ -23,6 +23,8 @@ async function submitData(props) {
 }
 
 export default (req, res) => {
+	res.setHeader('Access-Control-Allow-Origin', '*')
+	
 	//console.log('req', req)
 	const { play } = req.query
 	submitData({ 
