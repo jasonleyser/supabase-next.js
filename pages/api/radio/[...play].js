@@ -36,6 +36,6 @@ export default (req, res) => {
 		radio_freq: play[6], 
 	});
 
-	res.end(play)
+	res.end(`Post: ${play}`)
 }
 
