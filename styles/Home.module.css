@@ -113,6 +113,23 @@
   margin-left: 0.5rem;
 }
 
+.filterMenu {
+  width: auto; 
+  height: auto;
+  padding: 2px 6px;
+  margin-right: 8px;
+  display: inline;
+  cursor: pointer;
+}
+
+.filterMenu:hover {
+  background-color: #C0C0C0;
+}
+
+.filterMenuActive {
+  background-color: #FDC161;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
