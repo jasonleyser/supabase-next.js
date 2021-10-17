@@ -17,6 +17,8 @@
     "react-dom": "17.0.2",
     "react-markdown": "^6.0.2",
     "react-simplemde-editor": "^5.0.1",
+    "time-passed": "^0.0.5",
+    "unixtimejs": "^0.1.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
