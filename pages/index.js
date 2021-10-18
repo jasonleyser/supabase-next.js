@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { supabase } from '../api'
+import terminal from '../styles/Terminal.module.css';
 
 export default function Home() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [userData, setUserData] = useState([])
   useEffect(() => {
+    /*
     fetchPosts()
     const mySubscription = supabase
       .from('posts')
@@ -16,6 +19,10 @@ export default function Home() {
       })
       .subscribe()
     return () => supabase.removeSubscription(mySubscription)
+    */
+    const user = supabase.auth.user()
+    setUserData(user)
+    console.log(user)
   }, [])
   async function fetchPosts() {
     const { data, error } = await supabase
@@ -24,28 +31,19 @@ export default function Home() {
     setPosts(data)
     setLoading(false)
   }
-  if (loading) return <p className="text-2xl">Loading ...</p>
-  if (!posts.length) return <p className="text-2xl">No posts.</p>
 
   return (
     <div>
       <Head>
-        <title>Supablog</title>
+        <title>Melotown Chamber</title>
       </Head>
 
-      <h1 className="text-3xl font-semibold tracking-wide mt-6 mb-2">Posts</h1>
-      {
-        posts.map(post => (
-          <Link key={post.id} href={`/posts/${post.id}`}>
-            <a className="block border-b border-gray-300	mt-8 pb-4">
-              <h2 className="text-xl font-semibold">{post.title}</h2>
-              <p className="text-gray-500 mt-2">Submitted by: {post.user_email}</p>
-              <iframe width="560" height="315" src={post.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p>{post.url}</p>
-            </a>
-          </Link>)
-        )
+      {!userData ?
+          <div>Not logged in</div>
+        :
+          <div>logged in</div>
       }
+
     </div>
   )
 }

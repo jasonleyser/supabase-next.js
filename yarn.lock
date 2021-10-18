@@ -2389,6 +2389,11 @@
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
 
+"readable-numbers@^1.0.6":
+  "integrity" "sha512-wb9O3RMscRiV6qAH79+fhSL4yOWEYlDMVkvnBetBjDNAImPlRvjtHdImMvk5hoLEjRhjvFlrH3SR4nKOPMOw+Q=="
+  "resolved" "https://registry.npmjs.org/readable-numbers/-/readable-numbers-1.0.6.tgz"
+  "version" "1.0.6"
+
 "readable-stream@^2.0.2", "readable-stream@^2.3.3", "readable-stream@^2.3.6":
   "integrity" "sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw=="
   "resolved" "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz"
