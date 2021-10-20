@@ -56,6 +56,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
   <div>
+    
     <nav className="p-6 border-b border-gray-300">
       <Link href="/">
         <a className="m-6">Home</a>
@@ -102,7 +103,8 @@ function MyApp({ Component, pageProps }) {
       
 
     </nav>
-    <div className="py-8 px-16">
+    
+    <div>
       <Component {...pageProps} />
     </div>
   </div>

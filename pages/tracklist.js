@@ -27,6 +27,9 @@ export default function RealEstate() {
   useEffect(() => {
     fetchPosts()
     setUser(supabase.auth.user());
+
+    //let timer = setInterval(fetchPosts(), 6000);
+    //console.log('timer', timer)
    }, [])
 
   const handleClickAdd = () => {
@@ -72,6 +75,13 @@ export default function RealEstate() {
     return timeDiff;
   }
 
+  const handleOpenYoutube = (props) => {
+    console.log('track', props)
+    let str = `${props.artist} - ${props.title} ${props.year}`;
+    let urlQuery = str.replace(/\s+/g, '+').toLowerCase();
+    window.open(`https://www.youtube.com/results?search_query=${urlQuery}`, "_blank")
+  }
+
   return (
     <div>
       <Head>
@@ -91,11 +101,11 @@ export default function RealEstate() {
         filter.data.map(track => {
           let button = "🔥";
           return(
-            <div key={track.id}>
-              <a className="block border-b border-gray-300  mt-8 pb-4">
+            <div key={track.id} className={styles.trackCard} onClick={() => handleOpenYoutube(track)}>
+              <div className="block border-b border-gray-300  mt-8 pb-4">
                 <h1>{`${track.artist} - ${track.title}  | Last played ${lastPlayed(track.time_played)}`}</h1>
                 <p>{returnRadio(track.radio_freq)}</p>
-              </a>
+              </div>
               {user &&
                 <>
                   <button onClick={handleClickAdd}>{button}</button>

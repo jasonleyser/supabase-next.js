@@ -38,11 +38,16 @@ export default function Home() {
         <title>Melotown Chamber</title>
       </Head>
 
-      {!userData ?
-          <div>Not logged in</div>
-        :
-          <div>logged in</div>
-      }
+      <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000' }}>
+        <div className={terminal.MainTerminal} style={{ width: '1000px', height: '500px', backgroundColor: '#24C145' }}>
+          <div className={terminal.MainHeader}>
+            <div className={terminal.MainHeaderTitle}><span className={terminal.MainBlink}>█</span> mltn::chamber</div>
+          </div>
+          <div className={terminal.MainContainer}>
+            hello
+          </div>
+        </div>
+      </div>
 
     </div>
   )

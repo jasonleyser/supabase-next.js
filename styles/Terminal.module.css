@@ -2,57 +2,245 @@
 
 /* Graphical Formatting */
 
-	.container	{width: 75%; height: 75%; box-sizing: border-box; border-left: 3px white solid; border-right: 3px white solid; background: black; overflow-y: auto; margin: 0;}
-	.bar		{width: 75%; box-sizing: border-box; border: 3px white solid; padding: 0; margin: 0;}
-	.invert		{background: white; color: black; font-weight: bold;}
-	.unvert		{background: black; color: white;}
-	.hl:hover	{background: white; color: black; font-weight: bold;}
-	.no			{text-decoration: line-through; cursor: no-drop;}
+.container {
+    width: 75%;
+    height: 75%;
+    box-sizing: border-box;
+    border-left: 3px white solid;
+    border-right: 3px white solid;
+    background: black;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.bar {
+    width: 75%;
+    box-sizing: border-box;
+    border: 3px white solid;
+    padding: 0;
+    margin: 0;
+}
+
+.invert {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+.unvert {
+    background: black;
+    color: white;
+}
+
+.hl:hover {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+.no {
+    text-decoration: line-through;
+    cursor: no-drop;
+}
 
 /* DIV Formatting */
-	
-	.modal 	{position: fixed; z-index: 6; opacity: 0; pointer-events: none;}
-		.modal:target	{opacity: 1; filter: opacity(1); pointer-events: auto;}
-		
-	.noselect {
-	  -webkit-touch-callout: none; /* iOS Safari */
-		-webkit-user-select: none; /* Safari */
-		 -khtml-user-select: none; /* Konqueror HTML */
-		   -moz-user-select: none; /* Old versions of Firefox */
-			-ms-user-select: none; /* Internet Explorer/Edge */
-				user-select: none; /* Non-prefixed version, currently
-									  supported by Chrome, Edge, Opera and Firefox */
-	}
 
-	.flexCol	{display: flex; justify-content: center; flex-flow: column nowrap; align-items: center;}
-	.flexRow	{display: flex; justify-content: center; flex-flow: row wrap; align-items: center;}
-	.flexRowNo	{display: flex; justify-content: center; flex-flow: row nowrap; align-items: center;}
-	
-	.span{position: fixed; width: 100%; height: 100%; z-index: 1;}
-	
-	.app		{position: fixed; width: 100%; height: 100%; z-index: 1; display: flex; justify-content: center; flex-flow: column nowrap; align-items: center;}
+.modal {
+    position: fixed;
+    z-index: 6;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    filter: opacity(1);
+    pointer-events: auto;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+									  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.flexCol {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.flexRow {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.flexRowNo {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.span {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+}
 
 /* Animations */
-	
-	@keyframes blinker {50% {opacity: 0;}}
-	.blink {animation: blinker 1s step-start infinite;}
-	
-	@keyframes highlightBlink {50% {background-color: black; color: rgba(153,153,102,1); font-weight: normal;}}
-	.highlightBlink {animation: highlightBlink 1s step-start infinite;}
-	
-	@keyframes load {50% {opacity: 0;}}
-		.load0n5s {animation: load 0.5s step-start forwards;}
-	.load1s {animation: load 1s step-start forwards;}
-		.load1n5s {animation: load 1.5s step-start forwards;}
-	.load2s {animation: load 2s step-start forwards;}
-		.load2n5s {animation: load 2.5s step-start forwards;}
-	.load3s {animation: load 3s step-start forwards;}
-		.load3n5s {animation: load 3.5s step-start forwards;}
-	.load4s {animation: load 4s step-start forwards;}
-		.load4n5s {animation: load 4.5s step-start forwards;}
-	.load5s {animation: load 5s step-start forwards;}
-		.load5n5s {animation: load 5.5s step-start forwards;}
-	.load6s {animation: load 6s step-start forwards;}
-	.load7s {animation: load 7s step-start forwards;}
-	.load8s {animation: load 8s step-start forwards;}
-	.load9s {animation: load 9s step-start forwards;}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    animation: blinker 1s step-start infinite;
+}
+
+@keyframes highlightBlink {
+    50% {
+        background-color: black;
+        color: rgba(153, 153, 102, 1);
+        font-weight: normal;
+    }
+}
+
+.highlightBlink {
+    animation: highlightBlink 1s step-start infinite;
+}
+
+@keyframes load {
+    50% {
+        opacity: 0;
+    }
+}
+
+.load0n5s {
+    animation: load 0.5s step-start forwards;
+}
+
+.load1s {
+    animation: load 1s step-start forwards;
+}
+
+.load1n5s {
+    animation: load 1.5s step-start forwards;
+}
+
+.load2s {
+    animation: load 2s step-start forwards;
+}
+
+.load2n5s {
+    animation: load 2.5s step-start forwards;
+}
+
+.load3s {
+    animation: load 3s step-start forwards;
+}
+
+.load3n5s {
+    animation: load 3.5s step-start forwards;
+}
+
+.load4s {
+    animation: load 4s step-start forwards;
+}
+
+.load4n5s {
+    animation: load 4.5s step-start forwards;
+}
+
+.load5s {
+    animation: load 5s step-start forwards;
+}
+
+.load5n5s {
+    animation: load 5.5s step-start forwards;
+}
+
+.load6s {
+    animation: load 6s step-start forwards;
+}
+
+.load7s {
+    animation: load 7s step-start forwards;
+}
+
+.load8s {
+    animation: load 8s step-start forwards;
+}
+
+.load9s {
+    animation: load 9s step-start forwards;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+.MainTerminal {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'VT323';
+}
+
+.MainHeader {
+	width: 100%;
+	height: 30px;
+	background-color: yellow;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.MainHeaderTitle {
+	line-height: 30px;
+	font-size: 25px;
+}
+
+.MainContainer {
+	height: calc(100% - 50px);
+	background-color: red;
+	border: 3px solid #000;
+	margin: 10px;
+	overflow: scroll;
+}
+
+.MainBlink {
+    animation: blinker 1s step-start infinite;
+}
+
+
